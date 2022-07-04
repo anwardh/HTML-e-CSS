@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- Head/Cabeçalho - Lida antes da página ser executada -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Título da Página</title>
+
+</head>
+
+<!-- Body - Parte visível no carregamento da página -->
+<body>
+    
+    <!-- Títulos e Tamanhos  -->
+
+    <h1>Título de Tamanho 1</h1>
+    <h2>Título de Tamanho 2</h2>
+    <h3>Título de Tamanho 3</h3>
+    <h4>Título de Tamanho 4</h4>
+    <h5>Título de Tamanho 5</h5>
+    <h6>Título de Tamanho 6</h6>
+
+    <!-- Texto em Bloco - Porque ocupa a linha inteira -->
+    <h4>Texto em Blocos de Parágrafos</h4>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum tempora, ullam nam suscipit dignissimos error consectetur temporibus, libero, excepturi laudantium sequi explicabo eius! Sequi et tempore maiores repellendus dignissimos architecto.</p>
+    <p>Fugiat provident voluptatem cum blanditiis. Libero molestias adipisci sapiente nemo, inventore temporibus earum soluta deserunt, enim cum modi perspiciatis? Tempora corrupti magnam corporis aut perferendis velit libero similique! Blanditiis, nulla.</p>
+    <p>Odit a atque, eius doloremque dolorum quas, sapiente reprehenderit ab dolor vero quis ratione maxime architecto aliquam pariatur repellat. Esse tempore nostrum, quos ad eligendi saepe quibusdam laudantium modi molestias!</p>
+
+    <!-- Texto em Linha -->
+    <h4>Parágrafos em Linha</h4>
+
+    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus consectetur aliquam, earum dolore nemo tempora quia, fuga quibusdam et delectus libero dolor provident eligendi illum recusandae nisi at laboriosam. Deserunt?</span><span>Asperiores voluptates ex at fugiat rem a assumenda sunt labore laboriosam, velit laudantium maiores cum cumque eaque quo, alias optio maxime aspernatur vel eos? Obcaecati earum aperiam laudantium nam rem?</span><span>Perferendis reiciendis perspiciatis dolores, assumenda sunt tempore sed laborum deleniti amet rem modi non dolore aliquid quam provident maiores itaque nostrum laboriosam. Reprehenderit laudantium hic quaerat rem. Ipsum, repudiandae accusamus?</span>
+    <br>
+
+
+    <!-- Tags de Contraste de Texto -->
+    <h4>Tags para Contraste de Texto</h4>
+    
+    <strong>Texto en Negrito com a tag "strong"</strong>
+    <br>
+    <em>Texto em itálico com a tag "em"</em>
+    <br>
+    <strike>Texto riscado com a tag "strike"</strike>
+    <br>
+
+    <!-- Lista Não Ordenada -->
+    <h4>Lista Não Ordenada</h4>
+
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+    </ul>
+
+    <!-- Lista Ordenada -->
+    <h4>Lista Ordenada</h4>
+
+    <ol>
+        <li>Item</li>
+        <li>Item</li>
+        <li>Item</li>
+        <li>Item</li>
+        <li>Item</li>
+    </ol>
+
+    <!-- Inserindo imagens com Fontes na Nuvem e Local 
+        src - Source: Local da Imagem
+        alt - Descrição da Imagem
+    -->
+
+    <h4>Inserindo imagens - Led Zeppelin - Fonte: Internet</h4>
+    <img src="https://f.i.uol.com.br/fotografia/2021/11/07/1636324264618853a85c562_1636324264_3x2_md.jpg" width="400px" alt="Descrição da Imagem">
+    <br>
+    <h4>Inserindo imagens - Led Zeppelin - Fonte: Local</h4>
+    <img src="./led-zeppelin-1973_gruen.webp" width="400px" alt="Descrição da Imagem">
+
+    <figure>
+        <h4>Usando a tag Figure para inseção de Imagem</h4>
+        <img src="https://revistafreak.com/wp-content/uploads/2020/11/especial-vah-halen-capa01.jpg" width="400px" alt="Van Halen">
+        <figcaption>Legenda da Imagem - Van Halen</figcaption> <!-- figcaption - para Legenda da imagem -->
+    </figure>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <h1>- - - - USANDO TAGs SEMÂNTICAS - - - -</h1>
+
+    <!-- <br>  Quebra de Linha - Não usar-->
+    <!-- <hr>  Linha Divisória - Não usar-->
+
+    
+    <!-- Internamente, a "div" é um bloco anônimo, ou seja, está fora do contexto -->       
+    <div>
+
+        <h3>Título dentro da Div</h3>
+        <p>Internamente, a "div" é um bloco anônimo, ou seja, está fora do contexto. Será usada para estruturar a página.</p>
+                
+    </div>
+
+    <section>
+
+        <h2>Section</h2>
+        <p>Serve para dividir o conteúdo/contexto em Sessões. Tem que ter um Título, geralmente, iniciado no h2</p>
+
+    </section>
+
+    <!-- Exemplo de Section -->
+
+    <div>
+
+        <div>Exemplo - Navegação</div>
+
+        <div>
+            <span>Exemplo - Span contida em uma tag Div para exemplificação de uma Section dentro de uma Div.</span>
+        </div>
+
+        <section>
+            <h4>Exemplo - Como fazer um Bolo de Cenoura?</h4>
+            <p>Exemplo - Corpo da Section dentro de uma Div para exemplificação</p>
+        </section>       
+
+    </div>
+
+
+    <!-- <article>
+
+        <h2>Article</h2>
+        <p>É, de longe, a tag mais importante de um documento, porque é o seu conteúdo/contexto principal!</p>
+
+        <h2>Exemplo da Article</h2>
+
+        <h2>Exemplo - Bolo de Cenoura</h2>
+        <p>Exemplo - Receita do Bolo de Cenoura</p>
+
+        <section>
+            <h4>Exemplo - Ingredientes</h4>
+           <ul>
+            <li>Ingrediente</li>
+            <li>Ingrediente</li>
+            <li>Ingrediente</li>
+            <li>Ingrediente</li>
+            <li>Ingrediente</li>
+           </ul>
+
+        </section>
+
+        <section>
+            <h4>Exemplo - Modo de Preparo</h4>
+            <ol>
+                <li>Modo de Preparo</li>
+                <li>Modo de Preparo</li>
+                <li>Modo de Preparo</li>
+                <li>Modo de Preparo</li>
+                <li>Modo de Preparo</li>
+            </ol>
+
+        </section>        
+
+        <section>
+            <h4>Exemplo - Informações Adicionais</h4>
+            <p>Exemplo - Texto com as Informações Adicionais</p>
+        </section>     
+
+    </article> -->
+
+
+    <main>
+
+        <h2>Main</h2>
+        <p>Corresponde ao conteúdo utilizado como "destaque" para ser apresentado como resumo em uma busca.</p>
+
+        <article>
+
+            <h2>Article</h2>
+            <p>É, de longe, a tag mais importante de um documento, porque é o seu conteúdo/contexto principal!</p>
+    
+            <h3>Exemplo da Article</h3>
+    
+            <h4>Exemplo - Bolo de Cenoura</h4>
+            <p>Exemplo - Receita do Bolo de Cenoura</p>
+    
+            <section>
+                <h4>Exemplo - Ingredientes</h4>
+                <ul>
+                    <li>Ingrediente</li>
+                    <li>Ingrediente</li>
+                    <li>Ingrediente</li>
+                    <li>Ingrediente</li>
+                    <li>Ingrediente</li>
+                </ul>
+    
+            </section>
+    
+            <section>
+                <h4>Exemplo - Modo de Preparo</h4>
+                <ol>
+                    <li>Modo de Preparo</li>
+                    <li>Modo de Preparo</li>
+                    <li>Modo de Preparo</li>
+                    <li>Modo de Preparo</li>
+                    <li>Modo de Preparo</li>
+                </ol>
+    
+            </section>        
+    
+            <section>
+                <h4>Exemplo - Informações Adicionais</h4>
+                <p>Exemplo - Texto com as Informações Adicionais</p>
+            </section>     
+    
+        </article>
+
+    </main>
+
+    <aside>
+
+        <h2>Aside</h2>
+        <p>Basicamente, não correspondem ao conteúdo principal, mas fazem parte do contexto. Seriam os "conteúdos relacionados".</p>
+
+    </aside>
+    
+</body>
+
+</html>
