@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 12 - Html: Formulários</title>
+</head>
+<body>
+
+    <article>
+
+        <h1>Nova Solicitação de Passaporte</h1>
+        <p>Pode haver mais de um Forms por página e cada um deles poderá enviar dados de maneira separada para o Servidor.</p>
+        <p>Precisaremos indicar para onde estes dados irão (servidor, para algum outro recurso do código-fonte), através da Propriedade 'action'.</p>
+        <p>- - > É importante lhe atribuir um nome, atravé da propriedade 'name'.</p>
+        <p>- - > Todo Forms precisará de um 'método de envio', aqui, usaremos o 'get'.</p>
+
+        <!-- Pode haver mais de um Forms por página e cada um deles poderá enviar dados de maneira separada para o Servidr.
+        Precisaremos indicar para onde estes dados irão (servidor, para algum outro recurso do código-fonte), através da Propriedade 'action'.
+         - - > É importante lhe atribuir um nome, atravé da propriedade 'name'.
+         - - > Todo Forms precisará de um 'método de envio', aqui, usaremos o 'get'        
+        
+        -->
+        <form 
+            action="./servidor/"
+            name="passaporte"
+            method="post"          
+        >
+
+            <!-- O input é a forma como os dados serão inseridos no Forms 
+            Por padrão, o Input 'text' vem vazio, podendo ter algum valor atribuído através da Propriedade 'value - dentro da definição do input'. Isso faz com que o Forms já venha 'previamente' preenchido com o valor do Value. 
+            Diferente do Value, a propriedade 'Placeholder' serve como orientação ao usuário para alguma instrução no preenchimento do Forms.
+        
+            Os Forms precisam de uma 'ação' (em Js ou gatilho - que pode ser um botão do tipo 'submit'). 
+            Para que os dados fiquem salvos após clicarmos no Enviar, será necessário nomearmos o Input com alguma definição de 'nome'. Este nome agirá como sendo uma variável para receber esses inputs. 
+
+            Semanticamente, se não tivéssemos o placeholder, como poderíamos identificar que o Forms é para colocarmos um nome?
+            Existe então a necessidade do uso da Tag 'Label'. Através dela poderemos tem um 'rótulo' (indicando - Digite seu Nome). Para associarmos a label com o input precisaremos do 'for', onde informaremos qual será o nosso input - isso deve ser feito através do 'id do input'.    
+            
+            O 'required' é uma propriedade que exige o preenchimento do Forms para não subir um dado vazio.
+
+            O minlength é a propriedade que atribui o 'número mínimo de caracteres para aquele Forms.'
+
+            Pattern corresponde ao 'Formato' para o minlength.
+
+            O date corresponde a Datas, porém, alguns navegadores não dão suporte para esta propriedade. Cada um agirá de maneira diferente dos demais.
+            min e max serão as datas 'mínima' e 'máxima' respectivamente.
+
+            Fieldset serve para agrupar inputs - um grupo de itens, por exemplo
+
+            
+        
+            -->
+
+            <span>* Campos Obrigatórios</span> <!-- Apenas um 'alerta' para a obrigatoriedade de preenchimento -->
+
+            <fieldset>
+                <legend>Dados Pessoais</legend>
+
+                <div> <!-- Como a Div ocupa todo o bloco, ao contrário da Label, que é inline. Usando a Div, estruturamos da forma a seguir. -->
+                    <label for="nome">Nome Completo *</label> <!-- Poderá ser ocultado 'visualmente' no CSS -->
+    
+                    <input 
+                        type="text" 
+                        name="nomeCompleto"
+                        id="nome"
+                        placeholder="placeholder"          
+                        required 
+                    >
+                </div>
+    
+                <div>
+                    <label for="telefone">Telefone</label>
+    
+                        <!-- pattern="[(0-9]{2})-[0-9]{5}-[0-9]{4}"
+                        placeholder="(xx)-xxxxx-xxxx" AMBOS DENTRO DO INPUT -->
+    
+                    <input 
+                        type="tel"    
+                        name="telefone"
+                        id="telefone"   
+                        minlength="11" 
+                        
+                    >
+                </div>
+    
+                <div>
+    
+                    <label for="dataDenascimento">Data de Nascimento</label>
+    
+                    <input 
+                        type="date"
+                        name="dataDeNascimento"
+                        id="dataDeNascimento"
+                        min="2022-07-01"
+                        max="2022-07-09"
+    
+                    >
+                </div>
+
+                <div>
+                    <!-- autorizacaoParaViajar - Corresponde a uma variável que dá nome aos dois 'radios', dessa forma, APENAS UM DELES PODERÁ SER SELECIONADO PARA RECEBER ALGUM VALOR -->
+                    <input 
+                    
+                        type="radio"
+                        name="autorizacaoParaViajar"
+                        id="emancipado"
+                        value="0"
+
+                    >
+
+                    <label for="emancipado">Emancipado</label>
+
+                </div>
+
+                <div>
+
+                    <input 
+                    
+                        type="radio"
+                        name="autorizacaoParaViajar"
+                        id="adocaoInternacional"
+                        value="1"
+
+                    >
+
+                    <label for="adocaoInternacional">Adoção Internacional</label>
+
+                </div>
+
+                <div>
+                    <!-- Com o uso do 'checkbox', AS DUAS OPÇÕES PODERÃO SER MARCADAS -->
+                    <input 
+                    
+                        type="checkbox"
+                        name="autorizacaoParaViajar"
+                        id="emancipado2"
+                        value="0"
+
+                    >
+
+                    <label for="emancipado2">Emancipado 2</label>
+
+                </div>
+
+                <div>
+
+                    <input 
+                    
+                        type="checkbox"
+                        name="autorizacaoParaViajar"
+                        id="adocaoInternacional2"
+                        value="1"
+
+                    >
+
+                    <label for="adocaoInternacional2">Adoção Internacional 2</label>
+
+                </div>
+
+                <div>
+                    <label for="genero">Gênero </label>
+
+                    <select
+
+                        name="genero"
+                        id="genero"
+                    >
+                        <option disabled selected>Escolha o Gênero</option>
+                        <option value="feminino">Feminino</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="nãoEspecificado">Não Especificado</option>                        
+
+                    </select>                
+                
+                </div>
+
+            </fieldset>      
+
+        <button type="submit">Enviar</button> <!-- Quando clicar no botão, será feito o envio dos dados do Forms e será armazenado para 'nomeCompleto'. -->
+        <button type="reset">Limpar</button> 
+    
+
+        </form>
+
+    </article>
+    
+<p><strong>IMPORTANTE</strong></p>
+
+    <p>Existem duas formas de enviar os dados coletados neste Forms para o Servidor. O primeiro é o 'get' e, o segundo, o 'post'. Neste, os valores das variáveis não são apresentados na URL, tal qual o 'get', dessa forma, faz-se necessária a criação de uma pasta - Servidor - para receber no arquivo - index.html - os dados oriundos deste Forms.</p>
+    
+    <p>Todas as alterações necessárias para isso estarão 'comentadas' neste código.</p>
+
+
+</body>
+</html> 
+
