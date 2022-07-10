@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <base href="../">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 14 - Pseudo-classe e Pseudo-elemento</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+        /* 
+            PSEUDO-CLASSES 
+        */
+
+        /* :HOVER - Ao passar o mouse sobre o elemento. */
+            /*Aqui, a classe .campo está sendo selecionada e, para usarmos uma pseudo-classe, usaremos 'dois pontos' seguidos de 'hover' -> Primeiro 'elemento' : 'comportamento' 
+             
+            É a aparência de ' quando se passa o cursor sobre o elemento' */
+            
+            .campo:hover {
+                background-color:lightgray;
+            }
+
+            .botao:hover {
+                background-color: green;
+            }
+
+        /* :ACTIVE - Ao pressionar o clique no elemento. */
+            /* É a aparência do botão enquanto está sendo pressionado */
+
+            .botao:active {
+                background-color: pink;
+            }
+        
+        /* :VISITED - Quando o link já foi visitado. */
+            /* É a aparência do link quando o visitamos */
+            
+            .link{
+                text-decoration: none;
+                color: blue;
+            }
+
+            .link:visited{
+                color: red;
+            }
+                   
+        /* :FOCUS - Quando o campo/input estiver ativo. */
+            /* É a aparência do Forms quando está ativo para input de dados */
+
+            .campo:focus{
+                background-color: lightcyan;
+            }
+
+        /* :INVALID - Quando o campo/input não possuir um valor válido. */
+            /* É a aparência da borda do Forms enquanto 'não incluimos um @ para sinalizar um e-mail (definido no type do input)' */
+
+            .campo:invalid{
+                border: 2px solid red;
+            }
+
+        /* :NTH-CHILD(N) - Seleciona a partir da ordem ou regra */
+            /* 
+            odd - ímpares
+            even - pares 
+            'n' - qualquer número para ordem numérica */
+
+            .lista__item:nth-child(odd){
+                background-color:indianred;
+                font-weight: bold;
+                border-radius: 5px;
+            }
+
+            
+        /*
+            PSEUDO-ELEMENTOS
+        */
+
+        /* ::BEFORE - Antes do conteúdo dentro do elemento. */
+            /* Insere um conteúdo CSS (fora do HTML) ANTES do elemento que está sendo utilizado (a Div 'conteudo') */
+
+            .conteudo::before{
+                background-color: lightseagreen;
+                border-radius: 10px;
+                content: ".conteudo::before";
+                font-weight: bold;
+                display: block;
+                padding: 20px;               
+            }
+        
+        /* ::AFTER - Depois do conteúdo dentro do elemento. */
+            /* Insere um conteúdo CSS (fora do HTML) DEPOIS do elemento que está sendo utilizado (a Div 'conteudo') */
+            
+            .conteudo::after{
+                background-color: lightseagreen;
+                border-radius: 10px;
+                content: ".conteudo::after";
+                font-weight: bold;
+                display: block;
+                padding: 20px;               
+            }
+             
+        /* ::FIRST-LETTER - Seleciona a primeira letra do texto. */
+            /* Altera a aparência da primeira Letra do parágrafo */
+
+            .paragrafo::first-letter{
+                color: blueviolet;
+                font-family:'Times New Roman', Times, serif;
+                font-size: 42px;
+                font-weight: bolder;
+
+            }
+
+        /* ::FIRST-LINE - Seleciona a primeira linha antes da quebra <br>. */
+            /* Altera a aparência da primeira Linha do parágrafo */
+
+            .paragrafo::first-line{
+                color:cornflowerblue;
+                font-family:'Times New Roman', Times, serif;
+                font-size: 20px;
+                font-weight: bolder;
+
+            }
+
+        
+       
+
+        /* 
+            Utilizando Pseudo-classes com Pseudo-elementos 
+        */
+
+    </style>
+</head>
+<body>
+
+    <div class="conteudo">
+
+        <p class="paragrafo">Lorem <a class="link" href="https://www.google.com.br">ipsum dolor</a>sit amet consectetur, adipisicing elit.<br><br>Quasi laborum, dolore molestias debitis ullam eveniet atque eaque recusandae doloremque voluptas magni voluptatum repudiandae et distinctio exercitationem voluptate impedit rem omnis.
+
+        <div>
+            <input 
+                class="campo" 
+                name="email" 
+                type="email" 
+                placeholder="Digite seu e-mail"
+            >
+            <a class="botao" href="https://www.google.com.br" target="_blank">Botão</a>
+        </div>
+
+        <ul class="lista">
+            <li class="lista__item">Willian</li>
+            <li class="lista__item">Bruno Pablo</li>
+            <li class="lista__item">Lucas Akira</li>
+            <li class="lista__item">Debora Dias</li>
+            <li class="lista__item">Anwar</li>
+            <li class="lista__item">João Miguel</li>
+        </ul>
+
+    </div>
+
+</body>
+</html>
