@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <base href="../../"> <!-- Para ajudar na procura lá na 'href' da tag Link -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 13 - CSS - Introdução e Sintaxe</title>
+
+    <!-- 3. Referenciando um Doc externo - CSS -->
+
+    <link rel="stylesheet" href="/Aula13-CSS-Introducao/sintaxe/syle.css"> <!-- style.css é o documento referenciado (poderia ser ./style.css)-->
+
+    <!-- 2. Estilização direta no Cabeçalho -->
+    <style>
+
+        /* Seleção GLOBAL - Para todos os elementos*/
+
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            color: black ;
+        }
+    
+    /* Seleção por 'id' do elemento - SÓ PODE SER USADO UMA ÚNICA VEZ - Tem grau de especificidade Maior dentre as demais seleções*/
+        /* VALE 100 */
+        #destaque{
+            background-color: lightblue;
+        }
+    
+    /* Seleção por Class - Classe */
+        /* VALE 10 */
+        .destaque{
+            background-color: lightgreen;
+        }
+
+        
+        .titulo{
+            font-size: 32px;
+            color: dodgerblue;
+
+        }
+
+    /* Seleção por elemento Html */
+        /* VALE 1 */
+        h1 {
+            font-size: 24px;
+            color: blue;
+        }
+
+    /* Seleção Concatenada */
+    /* 111 - Possui o MAIOR GRAU DE ESPECIFICIDADE */
+    #destaque h1.titulo {
+        background-color: deeppink;
+    }
+
+
+    </style> 
+
+</head>
+<body>
+
+    <main class="destaque"  id="destaque"> <!-- Não sobrescreve, pois ID é "Mais específico" que Class -->
+        
+        <h1 class="titulo">Meu Título</h1> <!-- 52px sobrescreve o Style da Head -->
+
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur autem quis, doloribus ut, rerum ipsa itaque quam explicabo obcaecati aperiam beatae voluptas dolores magnam! Laboriosam veniam aliquid obcaecati ab. Voluptates.</p>
+
+    </main>
+
+    <!-- 1. Estilo Inline -->
+    <article class="destaque">
+        <h1 style="font-size: 52px; color: blueviolet;">Título 2 - Tam.: 24px</h1>
+    </article>
+
+    <article class="destaque">
+        <h1>Título 3 - Tam.: 24px</h1>
+    </article>
+    
+    
+</body>
+</html>
