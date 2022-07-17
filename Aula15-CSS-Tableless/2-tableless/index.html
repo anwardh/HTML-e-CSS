@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anwar - Aula 15 - CSS: Tableless</title>
+    <style type="text/css">
+
+        * {box-sizing: border-box;} /*Configuração GLOBAL para os boxes*/
+
+        body{ /* Padrão para toda a página */
+            margin: 0;
+        }
+
+        /* LAYOUT */
+
+        .l-header{
+
+            background-color: black;
+            min-height: 100vh;
+            padding: 25px;
+        }
+
+        .l-header > main {
+            border: 1px solid red;
+            padding: 25px 10px;
+            max-width: 1280px;
+            min-width: 320px;
+            margin: 0 auto;
+            
+        }
+
+        .l-about{
+
+            border: 2px solid red;
+            margin: 20px auto;
+            max-width: 1280px;
+            /* min-height: 80vh; */
+            /* min-width: 320px; */
+            padding: 25px;
+            overflow: hidden;            
+        }
+
+        .l-about > div{
+
+            border: 2px solid red;
+            float: left;
+            padding: 0 10px;
+            width: 50%;            
+        }
+
+        .l-newsletter{
+
+            background-color: #301a0f;
+            padding: 50px;   
+            text-align: center;         
+        }
+
+        .l-newsletter__title{
+            font-size: 18px;
+            color: white;
+        }
+
+        .l-newsletter__nav{
+            border: 1px solid red;
+            display:inline-block;
+            padding: 10px;
+        }
+
+        .l-newsletter__item{
+            margin: 0 5px;
+        }
+
+        .l-contact{
+            /* min-height: 80vh; */
+            padding: 25px 0;
+        }
+
+        .l-contact > div{
+            border: 1px solid red;
+            padding: 25px 10px;
+            max-width: 1280px;
+            min-width: 320px;
+            margin: 0 auto;
+        }
+
+        /* - - - - - */
+
+        /* TEXTO */
+
+        .h1{
+            font-size: 32px;
+        }
+
+        .h2{
+            font-size: 24px;
+        }
+
+        .p{
+            font-size: 18px;
+        }
+
+        .blockquote{
+            font-size: 24px;
+        }
+
+
+
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Cabeçalho -->
+
+    <div class="l-header">
+
+        <main>
+
+
+
+        </main>
+
+
+    </div>
+
+    <!-- Sobre -->
+
+    <div class="l-about"> 
+
+        <div>
+            <h1 class="h2">Sobre</h1>
+            <p class="blockquote">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est cumque eos aliquid debitis eum quod! Distinctio nulla doloribus explicabo voluptate cum ducimus odit quidem nihil non dolorum, quam voluptas culpa!</p>
+        </div>
+
+        <div>
+            <p class="p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident commodi magni optio numquam, laborum quas ea consequuntur vel quis? Sapiente fugiat cumque totam nostrum atque repellat ipsum maiores, quia molestiae.</p>
+        </div>
+
+    </div>
+
+    <!-- Newsletter -->
+
+    <div class="l-newsletter">
+
+        <section>
+            <h2 class="l-newsletter__title"> Acompanhe nossas promoções <br> nas redes sociais</h2>
+
+            <nav class="l-newsletter__nav">
+
+                <a class="l-newsletter__item" href="" >
+                    <img src="#" alt="facebook">
+                </a>
+
+                <a class="l-newsletter__item" href="" >
+                    <img src="#" alt="twitter">
+                </a>
+
+                <a class="l-newsletter__item" href="" >
+                    <img src="#" alt="instagram">
+                </a>                              
+
+            </nav>
+
+        </section>
+
+
+    </div>
+
+    <!-- Formulário Contatos -->
+
+    <div class="l-contact">
+
+        <div>
+
+            <section>
+                <h1 class="h2"> Contatos</h1>
+                <form 
+                    name="Contatos"
+                    action="">
+                    <div class="c-form__group">
+                        <label 
+                        for="" 
+                        class="c-form__label"
+                    >
+                        Nome
+                    </label>
+                        <input 
+                            type="text" 
+                            class="c-form__control"
+                        >
+                    </div>
+                    
+                    <div class="c-form__group">
+                        <label 
+                        for="" 
+                        class="c-form__label"
+                    >
+                        Telefone
+                    </label>
+                        <input 
+                            type="text" 
+                            class="c-form__control"
+                        >
+                    </div>
+    
+                    <div class="c-form__group">
+                        <label 
+                        for="" 
+                        class="c-form__label"
+                    >
+                        E-mail
+                    </label>
+                        <input 
+                            type="text" 
+                            class="c-form__control"
+                        >
+                    </div>
+    
+                    <div class="c-form__group">
+                        <label 
+                        for="" 
+                        class="c-form__label"
+                    >
+                        Mensagem
+                    </label>
+                        <textarea 
+                            class="c-form__textarea"
+                            name="" 
+                            id="" 
+                            cols="30" 
+                            rows="10"
+                        >
+                        </textarea>
+                    </div>
+                </form>
+            </section>
+
+        </div>
+      
+    </div>
+
+    
+</body>
+</html>

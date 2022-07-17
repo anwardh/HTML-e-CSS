@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anwar - Aula 15 - Contexto de Posicionamento</title>
+    <style type="text/css">
+
+        *{ /* Atribuição Global para o redimensionamento dos Boxes*/
+            box-sizing: border-box; /* Automaticamente, redimensiona para as proporções que definimos de Alt e Larg.*/
+        }
+
+        body{
+
+            background-color: black; 
+            font-family:Arial, Helvetica, sans-serif;
+            height: 200vh;
+
+        }
+
+        .boxe{
+            background-color: greenyellow;
+            border: 5px solid green;
+            font-size: 18px;
+            float: left; /* Distribui um box ao lado do outro*/
+            height: 75px;
+            padding: 10px;
+            margin: 5px;
+            text-align: center;
+            width: 75px;
+        }
+
+       .conteudo{
+            margin: 100px auto;
+            max-width: 200px;
+            border: 5px solid blue;
+            overflow: hidden; /* Permite esconder a parte 'que ultrapassa o Box geral'. Pode também criar barras de rolagem para a vertical e horizontal*/
+        }
+
+        /* 1 - Configuração do Modelo de Caixa*/
+
+        /* 2 - Posicionamento*/
+
+        /* 2.1 - Contexto*/
+
+        
+
+        .posicao-relativa{ /*Refere-se ao Box 4. Na ausência desta atribuição (o elemento Conteudo), toma-se como base a página*/
+            position: relative;
+
+        }
+
+        .posicao-fixa{ /* Este elemento não está levando em consideração o Box Relativo (Conteudo) */
+            background-color: pink;
+            position: fixed;
+            bottom: 10%;
+            right: 5%;
+            cursor: pointer; /* Para o cursor ficar com a aparência de link*/
+        }
+
+        .posicao-fixa:hover{
+            background-color: greenyellow; /* Fica verde quando passa o cursor por cima*/ 
+        }
+
+        .position-sticky{ /* Semelhante ao ".posicao-fixa" este guardará a sua posição inicial e, quando for utilizado o scroll, seguirá 'fixo' na rolagem - dentro do box relativo */
+            /* position: sticky;    
+            top: 20px; */
+        }
+
+        /* 1.1 - Camadas */
+        .posicao-absoluta{ /* Refere-se ao elemento (4) selecionado dentro do Box. Pode sobrepor outros elementos*/
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: yellow;
+            z-index: 1;
+
+        }
+
+        .posicao-absoluta-2{
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: blue;
+            z-index: 2; /*Posicionando 'acima'*/ 
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="conteudo posicao-relativa">
+        <div class="boxe position-sticky">1</div>
+        <div class="boxe posicao-fixa">2</div>
+        <div class="boxe posicao-absoluta-2">3</div>
+        <div class="boxe posicao-absoluta">4</div>
+
+    </div>
+
+
+    
+</body>
+</html>
