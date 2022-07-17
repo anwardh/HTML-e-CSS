@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <base href="../">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anwar - Aula 16 - CSS: Responsividade</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" media="print" href=""> -->
+    <style>
+
+        /* VERSÃO: DESKTOP-FIRST */
+        /* Superior a 720px */
+
+
+        /* Proporção de Fonte padrão do Documento */
+        html {
+            font-size: 16px;
+        }
+
+
+        /* L - Layout */
+
+        /* 1 - Criando um Grid Container */
+
+        .l-app {
+            border: 5px solid gray;
+            display: grid; /* Com isto, dos os elementos poderão ser divididos entre linhas e colunas*/
+            gap: 5px; /* Separação em ENTRE cada item */
+            padding: 5px;            
+            min-height: 70vh;
+            margin: 0 auto;
+            max-width: 960px;
+            width: 100vw;
+
+            /* 1.1 - Defino qual o modelo de área Grid irei utilizar */
+
+            grid-template-areas: /* reposicionamento dos itens no CSS. 
+            "nav nav nav nav" significa que serão 100px de cada nav para cada uma das quatro colunas */
+                "relacionados            nav         nav         nav"
+                "relacionados            conteudo    conteudo    conteudo"                
+                "relacionados            rodape      rodape      rodape";
+
+            /* 1.2 - Defino qual o modelo de linhas e colunas irei utilizar */
+
+            grid-template-columns: minmax(1fr, 100px) repeat(minmax(auto-fil, 1fr), 3); /* Definição do tamanho com base no conteúdo do elemento */
+
+            /* grid-template-columns: repeat(100px, 4);  Definição de 4 colunas com 100px de tamanho */
+            /* grid-template-columns: repeat(100px, 2) repeat(50px, 2); - Outra forma de representar o código acima*/
+
+            grid-template-rows: minmax(40px, 50px) 1fr minmax(40px, 50px) ; /* Definição das Linhas - 3 */
+        }
+
+        /* 2 - Nome para cada área da aplicação */
+
+        .l-nav {
+            grid-area: nav; /* Para posicionar cada elemento de maneira independente */
+        }
+
+        .l-conteudo {
+            grid-area: conteudo;
+        }
+
+        .l-relacionados {
+            grid-area: relacionados;
+        }
+
+        .l-rodape {
+            grid-area: rodape;
+        }
+
+        .l-nav,
+        .l-conteudo,
+        .l-relacionados,
+        .l-rodape {
+            background-color: greenyellow;
+            border-radius: 5px;
+            font-family: Arial black, sans-serif;            
+            text-align: center; 
+            padding: 10px;       
+            /* font-size: .8rem;  1rem é IGUAL a 100% de 16px -> Aqui, está sendo 80% */
+        }
+
+        .l-nav,
+        .l-conteudo,
+        .l-relacionados {
+            font-size: .8rem; /* 1rem é IGUAL a 100% de 16px -> Aqui, está sendo 80% */
+        }
+
+        .l-rodape {
+            font-size: 12px;
+        }
+        
+        .c-copyright {
+            font-size: 1em; /* 100% de 16px*/ 
+        }
+        
+
+        /* VERSÃO: MOBILE-FIRST -> TABLET */
+        /* DE 481px a 720px */
+
+        /*SE A RESOLUÇÃO DA TELA FOR MENOR QUE 720PX, ESTÉ CÓDIGO IRÁ "SBRESCREVER" O LAYOUT PADRÃO */
+        @media(max-width: 720px) { /*Exceção do 'Layout padrão' definido anteriormente -> Adaptando para versão Desktop */
+            html {
+                font-size: 20px;
+            }
+            .l-nav,
+            .l-conteudo,
+            .l-relacionados,
+            .l-rodape{
+                background-color: orange;
+            }
+
+            .l-rodape {
+                font-size: 14px;
+            }
+
+            .l-app {
+
+                grid-template-areas: /* reposicionamento dos itens no CSS. 
+                "nav nav nav nav" significa que serão 100px de cada nav para cada uma das quatro colunas */
+                    "nav                    nav         nav         nav"
+                    "relacionados           conteudo    conteudo    conteudo"                
+                    "relacionados           rodape      rodape      rodape";
+
+                /* 1.2 - Defino qual o modelo de linhas e colunas irei utilizar */
+
+                grid-template-columns: repeat(minmax(auto-fil, 1fr), 4); /* Definição do tamanho com base no conteúdo do elemento */
+
+                /* grid-template-columns: repeat(100px, 4);  Definição de 4 colunas com 100px de tamanho */
+                /* grid-template-columns: repeat(100px, 2) repeat(50px, 2); - Outra forma de representar o código acima*/
+
+                grid-template-rows: minmax(40px, 50px) 1fr minmax(40px, 50px) ; /* Definição das Linhas - 3 */
+                
+            }
+        }
+
+        /* VERSÃO: MOBILE-FIRST -> CELULAR */
+        /* De 0 a 480px */
+
+        @media(max-width: 480px) { 
+            html {
+                font-size: 30px;
+            }
+            .l-nav,
+            .l-conteudo,
+            .l-relacionados,
+            .l-rodape{
+                background-color: blue;
+            }
+
+            .l-rodape {
+                font-size: 16px;
+            }
+
+            .l-app {
+
+                grid-template-areas: /* reposicionamento dos itens no CSS. 
+                "nav nav nav nav" significa que serão 100px de cada nav para cada uma das quatro colunas */
+                "nav"
+                "relacionados"                
+                "conteudo"
+                "rodape";
+
+                /* 1.2 - Defino qual o modelo de linhas e colunas irei utilizar */
+
+                grid-template-columns: 1fr; /* Definição do tamanho com base no conteúdo do elemento */
+
+                /* grid-template-columns: repeat(100px, 4);  Definição de 4 colunas com 100px de tamanho */
+                /* grid-template-columns: repeat(100px, 2) repeat(50px, 2); - Outra forma de representar o código acima*/
+
+                grid-template-rows: minmax(40px, 50px) 1fr minmax(40px, 50px) ; /* Definição das Linhas - 3 */
+
+            }
+        }
+
+        @media print { /* Quando não quero que os Elementos a seguir não participem da mídia "PRINT" */
+            .l-nav,
+            .l-relacionados,
+            .l-rodape{
+                display: none;
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="l-app">
+        <nav class="l-nav">Navegação</nav> <!-- 1rem = 18px -->
+        <main class="l-conteudo">Conteúdo</main> <!-- 1rem = 18px -->
+        <aside class="l-relacionados">Relacionados</aside><!-- 1rem = 18px -->
+        <footer class="l-rodape"><!-- Fonte Padrão 16px -->
+            <span class="c-copyright">Rodapé</span> <!-- 1em = 16px -->
+        </footer>            
+    </div>
+    
+</body>
+</html>
